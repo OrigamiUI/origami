@@ -1,0 +1,58 @@
+# Object files
+*.o
+*.obj
+*.lo
+*.slo
+
+# Precompiled headers
+*.gch
+*.pch
+
+# Shared/static libraries
+*.so
+*.so.*
+*.dylib
+*.dll
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+
+# Build directories
+build/
+bin/
+obj/
+out/
+
+# IDE / editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.bak
+.project
+.cproject
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+compile_commands.json
+
+# Debug
+*.dSYM/
+*.pdb
