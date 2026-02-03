@@ -23,7 +23,7 @@ Origami UI provides 25+ UI controls for building graphical user interfaces in to
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING).
+See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 
