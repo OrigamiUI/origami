@@ -1,0 +1,7 @@
+-std=c11
+-Wall
+-Wextra
+-pedantic
+-I/opt/homebrew/include/SDL2
+-D_THREAD_SAFE
+-Isrc
