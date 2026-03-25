@@ -106,4 +106,66 @@ enum {
     OU_KEY_ENTER = (1 << 4)
 };
 
+
+typedef struct ou_context ou_context;
+typedef unsigned ou_id;
+typedef OU_REAL ou_real;
+typedef void *ou_font;
+
+typedef struct { int x, y; } ou_vec2;
+typedef struct { int x, y, w, h; } ou_rect;
+typedef struct { unsigned char r, g, b, a; } ou_color;
+typedef struct { ou_id id; int last_touch; } ou_cache_slot;
+
+typedef struct { int type, size; } ou_cmd_base;
+typedef struct { ou_cmd_base base; void *dst; } ou_cmd_skip;
+typedef struct { ou_cmd_base base; ou_rect rect; } ou_cmd_scissor;
+typedef struct { ou_cmd_base base; ou_rect rect; ou_color color; } ou_cmd_fill;
+typedef struct { ou_cmd_base base; ou_font font; ou_vec2 pos; ou_color color; char str[1]; } ou_cmd_glyph;
+typedef struct { ou_cmd_base base; ou_rect rect; int id; ou_color color; } ou_cmd_symbol;
+
+typedef union {
+    int type;
+    ou_cmd_base base;
+    ou_cmd_skip skip;
+    ou_cmd_scissor scissor;
+    ou_cmd_fill fill;
+    ou_cmd_glyph glyph;
+    ou_cmd_symbol symbol;
+} ou_cmd;
+
+typedef struct {
+    ou_rect body;
+    ou_rect next;
+    ou_vec2 position;
+    ou_vec2 size;
+    ou_vec2 max;
+    int widths[OU_MAX_COLUMNS];
+    int items;
+    int item_index;
+    int next_row;
+    int next_type;
+    int indent;
+} ou_grid;
+
+typedef struct {
+    ou_cmd *head, *tail;
+    ou_rect rect;
+    ou_rect body;
+    ou_vec2 content_size;
+    ou_vec2 scroll;
+    int zindex;
+    int open;
+} ou_frame;
+
+typedef struct {
+    ou_font font;
+    ou_vec2 size;
+    int padding;
+    int spacing;
+    int indent;
+    int title_height;
+    int scrollbar_size;
+    int thumb_size;
+
 #endif
