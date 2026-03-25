@@ -169,3 +169,5 @@ typedef struct {
     int thumb_size;
 
 #endif
+
+#endif
