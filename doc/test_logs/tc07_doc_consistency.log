@@ -1,0 +1,23 @@
+TC-07 Documentation Consistency
+Generated: 2026-04-09 21:15:49 +03:00
+Workdir: C:\Users\admin\Documents\GitHub\origami
+
+Command: powershell -ExecutionPolicy Bypass -File tests/run_doc_checks.ps1
+DOC_CHECKS_OK
+ExitCode: 0
+
+Required artifact presence:
+FOUND: doc/test_report_v1.md
+FOUND: doc/test_report_v1_excel.csv
+FOUND: doc/quality_factor_matrix_v1.md
+FOUND: doc/Delta_Design_Implementation_Report.md
+FOUND: doc/evidence_media_v1.md
+FOUND: doc/traceability_matrix_v1.md
+FOUND: doc/uml/class.puml
+FOUND: doc/uml/component.puml
+FOUND: doc/uml/sequence_frame.puml
+FOUND: doc/uml/deployment.puml
+
+Report IDs: TC-01, TC-02, TC-03, TC-04, TC-05, TC-06, TC-07
+Trace IDs: TC-01, TC-02, TC-03, TC-04, TC-05, TC-06, TC-07
+Missing in report: none

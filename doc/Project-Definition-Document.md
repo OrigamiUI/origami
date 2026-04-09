@@ -69,7 +69,7 @@ The project solves the problem of building cross-platform GUIs in C without heav
 
 ## Deliverables
 
-1. **Origami UI core library** -- A single C header file (`origami_ui.h`) and a single C source file (`origami_ui.c`) containing all 25+ controls, the layout system, input handling, and the command pipeline.
+1. **Origami UI core library** -- A single C header file (`origami.h`) and a single C source file (`origami.c`) containing all 25+ controls, the layout system, input handling, and the command pipeline.
 2. **Demo application** -- A complete SDL2  demo that showcases every control and serves as a reference for integrating the library.
 3. **API documentation** -- A usage guide covering getting started, the layout system, style customization, and creating custom controls.
 4. **Component reference** -- Per-control documentation listing function signatures, parameters, option flags, return values, and usage examples.

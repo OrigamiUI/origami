@@ -1,9 +1,10 @@
 # Software Design Document
 
 **Project:** Origami UI
-**Selected Use Case:** UC-3 — Interact with Controls
-**Version:** 1.0
-**Date:** February 2026
+**Assignment scope:** Assignment 3 final submission set
+**Primary use-case coverage:** UC-2, UC-3, UC-4
+**Version:** 1.1
+**Date:** 2026-04-09
 
 ---
 
@@ -11,11 +12,11 @@
 
 | Task | Responsible Member |
 |---|---|
-| System Overview, System Context | Ahmet Batuhan Günal |
+| System Overview, System Context | Ahmet Batuhan Gunal |
 | Architectural Design, Component Design | Archyn Mikhailov |
 | Data Design, Design Patterns | Archyn Mikhailov |
-| Implementation Notes, UI Design, Interfaces | Tuna Kömürcü |
-| Performance, Error Handling, Testability, Deployment | Tuna Kömürcü |
+| Implementation Notes, UI Design, Interfaces | Tuna Komurcu |
+| Performance, Error Handling, Testability, Deployment | Tuna Komurcu |
 
 
 ---
@@ -24,7 +25,7 @@
 
 Origami UI is a lightweight, immediate-mode GUI library written in portable ANSI C (C11). It provides a set of interactive UI controls — buttons, text inputs, checkboxes, sliders, toggles, and more — that application developers call as functions each frame. The library does not draw to the screen directly; it produces a stream of abstract drawing commands (filled rectangles, text glyphs, icons, clipping regions) that the host application renders through its own graphics pipeline.
 
-This document describes the design of the **Use Case 3: Interact with Controls** implementation. In this use case, the End User interacts with rendered UI controls through mouse and keyboard input. The host application feeds raw input events into the library, which routes them to the appropriate control based on spatial hit-testing, hover state, and focus state. Each control function returns signal flags (`OU_SIGNAL_COMMIT`, `OU_SIGNAL_ALTERED`) that the application developer acts upon.
+This document describes the core control-interaction design centered on **Use Case 3: Interact with Controls**. For Assignment 3 final scope expansion, additional UC-2 and UC-4 validation mapping is captured in Section 16. In this use case family, the End User interacts with rendered UI controls through mouse and keyboard input. The host application feeds raw input events into the library, which routes them to the appropriate control based on spatial hit-testing, hover state, and focus state. Each control function returns signal flags (`OU_SIGNAL_COMMIT`, `OU_SIGNAL_ALTERED`) that the application developer acts upon.
 
 The implementation covers the Phase 1 styled controls: **Button** (with four variants: Default, Secondary, Outline, Ghost), **Input** (with placeholder text, Ctrl+A selection, cursor feedback), **Checkbox**, **Slider** (with filled progress track), and **Toggle**.
 
@@ -663,21 +664,44 @@ gcc main.c renderer.c ..\src\origami.c ^
     -o origami_demo.exe
 ```
 
-## 16. Change Log
+## 16. Assignment 3 Scope Update (Final Submission)
+
+This document originally focused on UC-3. For Assignment 3 closeout, the validated scope is expanded and aligned as follows:
+
+- UC-2: command pipeline walk/render validation
+- UC-3: keyboard/focus interaction validation
+- UC-4: runtime theme change validation
+
+### 16.1 Design Pattern Mapping in Final Scope
+
+| Use Case | Pattern Focus | Where Applied |
+|---|---|---|
+| UC-2 | Pipeline / Iterator-style command walk | `ou_walk()` over command buffer |
+| UC-3 | Immediate-mode state + helper abstraction | `ou_sense`, focus/hover context state |
+| UC-4 | Strategy-style theme mutation and rendering behavior | runtime `ou_theme` mutation path |
+
+### 16.2 Validation Evidence Links
+
+- Test report: [test_report_v1.md](test_report_v1.md)
+- Execution log: [test_execution_log_v1.md](test_execution_log_v1.md)
+- Traceability: [traceability_matrix_v1.md](traceability_matrix_v1.md)
+- Full Unity inventory: [unity_test_inventory_v1.md](unity_test_inventory_v1.md)
+
+## 17. Change Log
 
 | Version | Date | Changes |
 |---|---|---|
-| 1.0 | February 2026 | Initial design document for UC-3 implementation. Phase 1 styled controls: Button (4 variants), Input (with Ctrl+A, cursor feedback, placeholder), Checkbox, Slider (with filled track), Toggle. |
+| 1.0 | February 2026 | Initial design document for UC-3 implementation. |
+| 1.1 | 2026-04-09 | Assignment 3 scope update added for UC-2/UC-3/UC-4 mapping and validation references. |
 
-## 17. Future Work / Open Issues
+## 18. Future Work / Open Issues
 
 | Item | Priority | Description |
 |---|---|---|
-| Remaining Phase 1 controls | High | Label, Text, Separator, Switch, Progress, Meter, Avatar not yet styled. |
-| Phase 2 controls | High | Radio, Checkbox Group, Toggle Group, Field, Fieldset, Form, Accordion, Collapsible, Tabs, Scroll Area, Toolbar. |
-| Phase 3 controls | Medium | Dialog, Alert Dialog, Popover, Tooltip, Context Menu, Select, Preview Card. |
-| Text cursor positioning | Medium | Input fields currently append-only; clicking within text to position the cursor is not yet supported. |
-| Text selection rendering | Low | Ctrl+A highlights all text, but arbitrary click-drag selection is not implemented. |
-| Keyboard navigation | Low | Tab to move focus between controls is not yet implemented. |
-| Rounded corners | Low | The renderer only supports rectangles. Rounded corners would require renderer-level support or a new command type. |
-| Animation/transitions | Low | Controls snap between states. Smooth transitions would require a time-based interpolation system. |
+| Keyboard traversal closure | High | Implement explicit Tab/Shift+Tab focus traversal and rerun TC-02. |
+| Escape cancellation closure | High | Implement consistent Escape cancel/dismiss behavior and rerun TC-03. |
+| Clang portability closure | Medium | Execute strict compile checks with Clang (local or CI) to close TC-05. |
+| Input cursor refinement | Low | Improve text cursor placement and non-append editing behavior. |
+| Animation/transitions | Low | Optional smooth transitions can be added in a future release cycle. |
+
+

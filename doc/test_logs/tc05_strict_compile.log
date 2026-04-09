@@ -1,0 +1,71 @@
+TC-05 Strict Compile Quality
+Generated: 2026-04-09 21:15:30 +03:00
+Workdir: C:\Users\admin\Documents\GitHub\origami
+
+GCC strict compile start
+gcc -std=c11 -Wall -Wextra -pedantic -Isrc -c src/origami.c -o tests\.obj_tc05\origami.o
+ExitCode: 0
+gcc -std=c11 -Wall -Wextra -pedantic -Isrc -c C:\Users\admin\Documents\GitHub\origami\src\components\accordion.c -o tests\.obj_tc05\accordion.o
+ExitCode: 0
+gcc -std=c11 -Wall -Wextra -pedantic -Isrc -c C:\Users\admin\Documents\GitHub\origami\src\components\avatar.c -o tests\.obj_tc05\avatar.o
+ExitCode: 0
+gcc -std=c11 -Wall -Wextra -pedantic -Isrc -c C:\Users\admin\Documents\GitHub\origami\src\components\button.c -o tests\.obj_tc05\button.o
+ExitCode: 0
+gcc -std=c11 -Wall -Wextra -pedantic -Isrc -c C:\Users\admin\Documents\GitHub\origami\src\components\checkbox.c -o tests\.obj_tc05\checkbox.o
+ExitCode: 0
+gcc -std=c11 -Wall -Wextra -pedantic -Isrc -c C:\Users\admin\Documents\GitHub\origami\src\components\checkbox_group.c -o tests\.obj_tc05\checkbox_group.o
+ExitCode: 0
+gcc -std=c11 -Wall -Wextra -pedantic -Isrc -c C:\Users\admin\Documents\GitHub\origami\src\components\collapsible.c -o tests\.obj_tc05\collapsible.o
+ExitCode: 0
+gcc -std=c11 -Wall -Wextra -pedantic -Isrc -c C:\Users\admin\Documents\GitHub\origami\src\components\context_menu.c -o tests\.obj_tc05\context_menu.o
+ExitCode: 0
+gcc -std=c11 -Wall -Wextra -pedantic -Isrc -c C:\Users\admin\Documents\GitHub\origami\src\components\dialog.c -o tests\.obj_tc05\dialog.o
+ExitCode: 0
+gcc -std=c11 -Wall -Wextra -pedantic -Isrc -c C:\Users\admin\Documents\GitHub\origami\src\components\field.c -o tests\.obj_tc05\field.o
+ExitCode: 0
+gcc -std=c11 -Wall -Wextra -pedantic -Isrc -c C:\Users\admin\Documents\GitHub\origami\src\components\label.c -o tests\.obj_tc05\label.o
+ExitCode: 0
+gcc -std=c11 -Wall -Wextra -pedantic -Isrc -c C:\Users\admin\Documents\GitHub\origami\src\components\panel.c -o tests\.obj_tc05\panel.o
+ExitCode: 0
+gcc -std=c11 -Wall -Wextra -pedantic -Isrc -c C:\Users\admin\Documents\GitHub\origami\src\components\popover.c -o tests\.obj_tc05\popover.o
+ExitCode: 0
+gcc -std=c11 -Wall -Wextra -pedantic -Isrc -c C:\Users\admin\Documents\GitHub\origami\src\components\popup.c -o tests\.obj_tc05\popup.o
+ExitCode: 0
+gcc -std=c11 -Wall -Wextra -pedantic -Isrc -c C:\Users\admin\Documents\GitHub\origami\src\components\preview_card.c -o tests\.obj_tc05\preview_card.o
+ExitCode: 0
+gcc -std=c11 -Wall -Wextra -pedantic -Isrc -c C:\Users\admin\Documents\GitHub\origami\src\components\progress.c -o tests\.obj_tc05\progress.o
+ExitCode: 0
+gcc -std=c11 -Wall -Wextra -pedantic -Isrc -c C:\Users\admin\Documents\GitHub\origami\src\components\radio.c -o tests\.obj_tc05\radio.o
+ExitCode: 0
+gcc -std=c11 -Wall -Wextra -pedantic -Isrc -c C:\Users\admin\Documents\GitHub\origami\src\components\scroll_area.c -o tests\.obj_tc05\scroll_area.o
+ExitCode: 0
+gcc -std=c11 -Wall -Wextra -pedantic -Isrc -c C:\Users\admin\Documents\GitHub\origami\src\components\select.c -o tests\.obj_tc05\select.o
+ExitCode: 0
+gcc -std=c11 -Wall -Wextra -pedantic -Isrc -c C:\Users\admin\Documents\GitHub\origami\src\components\separator.c -o tests\.obj_tc05\separator.o
+ExitCode: 0
+gcc -std=c11 -Wall -Wextra -pedantic -Isrc -c C:\Users\admin\Documents\GitHub\origami\src\components\slider.c -o tests\.obj_tc05\slider.o
+ExitCode: 0
+gcc -std=c11 -Wall -Wextra -pedantic -Isrc -c C:\Users\admin\Documents\GitHub\origami\src\components\switch.c -o tests\.obj_tc05\switch.o
+ExitCode: 0
+gcc -std=c11 -Wall -Wextra -pedantic -Isrc -c C:\Users\admin\Documents\GitHub\origami\src\components\tabs.c -o tests\.obj_tc05\tabs.o
+ExitCode: 0
+gcc -std=c11 -Wall -Wextra -pedantic -Isrc -c C:\Users\admin\Documents\GitHub\origami\src\components\textfield.c -o tests\.obj_tc05\textfield.o
+ExitCode: 0
+gcc -std=c11 -Wall -Wextra -pedantic -Isrc -c C:\Users\admin\Documents\GitHub\origami\src\components\theme_builder.c -o tests\.obj_tc05\theme_builder.o
+ExitCode: 0
+gcc -std=c11 -Wall -Wextra -pedantic -Isrc -c C:\Users\admin\Documents\GitHub\origami\src\components\toggle.c -o tests\.obj_tc05\toggle.o
+ExitCode: 0
+gcc -std=c11 -Wall -Wextra -pedantic -Isrc -c C:\Users\admin\Documents\GitHub\origami\src\components\toggle_group.c -o tests\.obj_tc05\toggle_group.o
+ExitCode: 0
+gcc -std=c11 -Wall -Wextra -pedantic -Isrc -c C:\Users\admin\Documents\GitHub\origami\src\components\toolbar.c -o tests\.obj_tc05\toolbar.o
+ExitCode: 0
+gcc -std=c11 -Wall -Wextra -pedantic -Isrc -c C:\Users\admin\Documents\GitHub\origami\src\components\tooltip.c -o tests\.obj_tc05\tooltip.o
+ExitCode: 0
+gcc -std=c11 -Wall -Wextra -pedantic -Isrc -c C:\Users\admin\Documents\GitHub\origami\src\components\window.c -o tests\.obj_tc05\window.o
+ExitCode: 0
+GCC Result: STRICT_COMPILE_OK
+GCC strict compile end
+
+Clang check start
+clang_not_available
+Clang check end

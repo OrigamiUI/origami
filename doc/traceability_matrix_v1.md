@@ -1,27 +1,37 @@
-# Traceability Matrix - Origami UI (v1 closeout)
+# Traceability Matrix - Origami UI (Assignment 3)
 
-**Purpose:** Link requirements to backlog items, sprint tasks, and test cases.
-
----
-
-## Matrix
-
-
-| Requirement Ref                     | Product Backlog ID    | Sprint Backlog Task | Test Case ID(s) | Status  |
-| ----------------------------------- | --------------------- | ------------------- | --------------- | ------- |
-| UC-4 (theme runtime behavior)       | A-3                   | SB-01               | TC-06           | Planned |
-| UC-3 (keyboard/focus interaction)   | C-2                   | SB-02               | TC-02, TC-03    | Planned |
-| Demo build deliverable              | E-1                   | SB-03               | TC-01           | Planned |
-| UC-2 (command pipeline walk/render) | E-2                   | SB-04               | TC-04           | Planned |
-| NFR (strict compile quality)        | F-1                   | SB-05               | TC-05           | Planned |
-| Release quality manual validation   | F-2                   | SB-06               | TC-01..TC-07    | Planned |
-| Documentation completeness          | F-3                   | SB-07               | TC-07           | Planned |
-| Requirement mapping consistency     | Cross-cutting closure | SB-08               | TC-07           | Planned |
-
+**Purpose:** Maintain explicit links among requirements, backlog items, sprint tasks, and executed tests.
 
 ---
 
-## Usage
+## Traceability Matrix
 
-1. Keep `Test Case ID(s)` aligned with [test_report_v1.md](test_report_v1.md).
-2. Move `Status` to `Done` when related sprint task and test are complete.
+| Requirement / Objective Ref | Product Backlog ID | Sprint Task ID | Test Case ID(s) | Current Status |
+| --- | --- | --- | --- | --- |
+| UC-2 command pipeline walk/render validity | E-2 | SB-04 | TC-04 | Pass |
+| UC-2 demo deliverable build/run closure | E-1 | SB-03 | TC-01 | Pass |
+| UC-3 keyboard and focus interaction completeness | C-2 | SB-02 | TC-02, TC-03 | Fail |
+| UC-4 runtime theme update behavior | A-3 | SB-01 | TC-06 | Pass |
+| NFR strict compile portability (GCC + Clang) | F-1 | SB-05 | TC-05 | Blocked |
+| Release readiness manual verification | F-2 | SB-06 | TC-01..TC-07 | Fail |
+| Documentation completeness and consistency | F-3 | SB-07 | TC-07 | Pass |
+| Cross-cutting ID consistency and mapping health | Cross-cutting closure | SB-08 | TC-07 | Pass |
+
+---
+
+## Naming and Numbering Convention
+
+| Artifact Type | Convention |
+| --- | --- |
+| Use case / requirement | `UC-*` |
+| Product backlog | `A-*`, `B-*`, `C-*`, `E-*`, `F-*` |
+| Sprint backlog task | `SB-*` |
+| Test case | `TC-*` |
+
+---
+
+## Consistency Rules
+
+1. Every `TC-*` in this matrix must exist in [test_report_v1.md](test_report_v1.md) and [test_report_v1_excel.csv](test_report_v1_excel.csv).
+2. `Current Status` values must be one of `Pass`, `Fail`, `Blocked`.
+3. Test IDs, requirement IDs, and sprint task IDs must remain stable after submission freeze.

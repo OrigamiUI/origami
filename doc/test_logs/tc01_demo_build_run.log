@@ -1,0 +1,12 @@
+TC-01 Demo Build and Launch Smoke
+Generated: 2026-04-09 21:15:06 +03:00
+Workdir: C:\Users\admin\Documents\GitHub\origami
+
+Build Command:
+gcc demo/main.c demo/renderer.c src/origami.c src/components/*.c -Isrc -Wall -Wextra -pedantic -std=c11 -IC:/msys64/mingw64/include -IC:/msys64/mingw64/include/SDL2 -LC:/msys64/mingw64/lib -lmingw32 -lSDL2main -lSDL2 -lm -o tests/demo_smoke.exe
+Build Output:
+Build ExitCode: 0
+
+Launch Command:
+$p = Start-Process -FilePath "tests/demo_smoke.exe" -PassThru; Start-Sleep -Seconds 2; if ($p.HasExited) { "EXITED:$($p.ExitCode)" } else { $p.Kill(); "STARTED_AND_KILLED" }
+Launch Result: STARTED_AND_KILLED

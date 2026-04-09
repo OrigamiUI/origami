@@ -25,6 +25,17 @@ Origami UI provides 25+ UI controls for building graphical user interfaces in to
 
 See [CONTRIBUTING.md](CONTRIBUTING.md).
 
+## Unit Tests
+
+Unity-based component tests are available under `tests/`.
+
+- Framework source: `third_party/unity/src`
+- Test runner: `tests/test_runner.c`
+- Per-component tests: `tests/components/test_*.c`
+- Runner scripts:
+  - `tests/run_tests.sh`
+  - `tests/run_tests.ps1`
+
 ## License
 
 [MIT](LICENSE)

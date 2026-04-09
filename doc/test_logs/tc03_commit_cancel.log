@@ -1,0 +1,37 @@
+﻿Commit/cancel evidence start
+Command: rg -n "ENTER|ESC|Escape|OU_KEY_ENTER|OU_KEY_ERASE|test_textfield_enter_returns_commit" tests demo src
+src\origami.h:80:    OU_HINT_CENTER    = (1 << 0),
+src\origami.h:105:    OU_KEY_ERASE = (1 << 3),
+src\origami.h:106:    OU_KEY_ENTER = (1 << 4)
+src\origami.h:435:    ou_button_ex(ctx, label, 0, OU_HINT_CENTER)
+src\origami.h:441:    ou_slider_ex(ctx, value, lo, hi, 0, OU_SLIDER_FMT, OU_HINT_CENTER)
+src\origami.h:444:    ou_spinner_ex(ctx, value, step, OU_SLIDER_FMT, OU_HINT_CENTER)
+src\origami.h:459:    ou_toggle_ex(ctx, label, state, OU_HINT_CENTER)
+src\origami.c:624:    if (opt & OU_HINT_CENTER) {
+demo\main.c:116:            ou_slider_ex(ctx, &val2, 0, 1, 0.01f, "%.2f", OU_HINT_CENTER);
+demo\main.c:192:            ou_inscribe(ctx, buf, r, OU_TINT_LABEL, OU_HINT_CENTER);
+demo\main.c:242:                           "%.0f", OU_HINT_CENTER);
+demo\main.c:499:                        OU_HINT_CENTER);
+demo\main.c:562:    [SDLK_RETURN    & 0xff] = OU_KEY_ENTER,
+demo\main.c:563:    [SDLK_BACKSPACE & 0xff] = OU_KEY_ERASE,
+tests\test_integration.c:39:void test_textfield_enter_returns_commit_and_clears_focus(void) {
+tests\test_integration.c:50:    ou_feed_keydown(&ctx, OU_KEY_ENTER);
+tests\test_runner.c:33:void test_textfield_enter_returns_commit_and_clears_focus(void);
+tests\test_runner.c:68:    RUN_TEST(test_textfield_enter_returns_commit_and_clears_focus);
+src\components\avatar.c:12:    ou_inscribe(ctx, initials, box, OU_TINT_LABEL, OU_HINT_CENTER);
+src\components\dialog.c:37:    if (ou_button_ex(ctx, "Cancel", 0, OU_HINT_CENTER)) {
+src\components\dialog.c:40:    if (ou_button_ex(ctx, "Confirm", 0, OU_HINT_CENTER)) {
+src\components\field.c:43:    if (ou_button_ex(ctx, "Submit", 0, OU_HINT_CENTER)) {
+tests\components\test_button.c:10:    sig = ou_button_ex(&ctx, "Save", 0, OU_HINT_CENTER);
+src\components\progress.c:15:    ou_inscribe(ctx, buf, r, OU_TINT_LABEL, opt | OU_HINT_CENTER);
+src\components\progress.c:33:    ou_inscribe(ctx, buf, r, OU_TINT_LABEL, opt | OU_HINT_CENTER);
+src\components\slider.c:84:    if (ou_slider_ex(ctx, &r_val, 0, 255, 1, "%.0f", OU_HINT_CENTER)) {
+src\components\slider.c:88:    if (ou_slider_ex(ctx, &g_val, 0, 255, 1, "%.0f", OU_HINT_CENTER)) {
+src\components\slider.c:92:    if (ou_slider_ex(ctx, &b_val, 0, 255, 1, "%.0f", OU_HINT_CENTER)) {
+src\components\slider.c:116:                        OU_HINT_CENTER);
+src\components\tabs.c:28:        ou_inscribe(ctx, labels[i], r, OU_TINT_LABEL, OU_HINT_CENTER);
+src\components\textfield.c:42:    if (ctx->key_pressed & OU_KEY_ERASE && len > 0) {
+src\components\textfield.c:48:    if (ctx->key_pressed & OU_KEY_ENTER) {
+src\components\toggle_group.c:27:        ou_inscribe(ctx, labels[i], r, OU_TINT_LABEL, OU_HINT_CENTER);
+Assessment: Enter commit path is present and tested; Escape-key dismissal path is not explicitly implemented/tested.
+Commit/cancel evidence end

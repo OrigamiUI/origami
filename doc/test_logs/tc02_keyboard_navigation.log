@@ -1,0 +1,19 @@
+﻿Keyboard navigation evidence start
+Command: rg -n "TAB|Shift\+Tab|SDLK_TAB|OU_KEY_" demo/main.c src/origami.h src/origami.c
+src/origami.c:16:** IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+src/origami.c:830:        ctx->key_down & OU_KEY_SHIFT && ctx->hover == id)
+src/origami.h:102:    OU_KEY_SHIFT = (1 << 0),
+src/origami.h:103:    OU_KEY_CTRL  = (1 << 1),
+src/origami.h:104:    OU_KEY_ALT   = (1 << 2),
+src/origami.h:105:    OU_KEY_ERASE = (1 << 3),
+src/origami.h:106:    OU_KEY_ENTER = (1 << 4)
+demo/main.c:556:    [SDLK_LSHIFT    & 0xff] = OU_KEY_SHIFT,
+demo/main.c:557:    [SDLK_RSHIFT    & 0xff] = OU_KEY_SHIFT,
+demo/main.c:558:    [SDLK_LCTRL     & 0xff] = OU_KEY_CTRL,
+demo/main.c:559:    [SDLK_RCTRL     & 0xff] = OU_KEY_CTRL,
+demo/main.c:560:    [SDLK_LALT      & 0xff] = OU_KEY_ALT,
+demo/main.c:561:    [SDLK_RALT      & 0xff] = OU_KEY_ALT,
+demo/main.c:562:    [SDLK_RETURN    & 0xff] = OU_KEY_ENTER,
+demo/main.c:563:    [SDLK_BACKSPACE & 0xff] = OU_KEY_ERASE,
+Assessment: no explicit Tab/Shift+Tab focus traversal implementation found in current code paths.
+Keyboard navigation evidence end
